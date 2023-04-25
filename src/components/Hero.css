@@ -1,0 +1,37 @@
+.hero-section {
+  background: #d4b8b8;
+}
+.hero-begin {
+  padding: 60px 60px;
+  display: flex;
+  justify-content: center;
+}
+.text-zone {
+  text-align: center;
+}
+.text-zone p {
+  color: #fff;
+}
+.text-zone .p-text {
+  font-size: 20px;
+  color: #fff;
+}
+.text-zone h1 {
+  font-size: 50px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+}
+.text-zone h1 span {
+  color: #00b3ff;
+}
+
+
+button {
+  border: none;
+  margin: 25px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px 25px;
+  background: #00b3ff;
+}
