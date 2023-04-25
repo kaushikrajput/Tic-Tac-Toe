@@ -1,5 +1,6 @@
 import React from "react";
-import './Navbar.css'
+import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -7,25 +8,49 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar">
           <div className="heading">
-            <h1><i>Contruction</i> </h1>
+            <h1>
+              {" "}
+              <i>Contruction</i>{" "}
+            </h1>
             <p>Your Company TagLine Here</p>
           </div>
           <div className="nav-links">
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                  <a href="#">Page</a>
-                  <a href="#">Blog</a>
-                  <a href="#">Portfolio</a>
-                  <a href="#">Components</a>
-                  <a href="#">Contacts</a>
-                  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </li>
-              </ul>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/pages">Page</Link>
+              </li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="/portfolio">Portfolio</Link>
+              </li>
+              <li>
+                <Link to="/components">Components</Link>
+              </li>
+              <li>
+                <Link to="/contacts">Contacts</Link>
+              </li>
+              <li>
+                <div className="searchBox">
+                  <input
+                    type="text"
+                    className="searchText"
+                    placeholder="search"
+                  />
+                  <a href="#" className="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </a>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-   </div>
+    </div>
   );
 };
 
