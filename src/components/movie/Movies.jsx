@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./movies.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import Summary from "../summary/Summary";
+import { Link, useNavigate } from "react-router-dom";
 
 const Movies = () => {
   const [data, setData] = useState([]);
+  let navigate = useNavigate();
+  
   useEffect(() => {
     (async () => {
       let { data } = await axios.get(
@@ -15,6 +16,11 @@ const Movies = () => {
     })();
   }, []);
 
+  const handleNavigat = (id, summary, name, image, language, rating) => {
+    navigate(`/summary/${id}`, {
+      state: { id, summary, name, image, language, rating },
+    });
+  };
   return (
     <div className="movies">
       <div className="container">
@@ -47,11 +53,21 @@ const Movies = () => {
                       </li>
                     )}
 
-                    <Link to={`/summary/${item.show.id}`}>
-                      <button className="btn-style">
-                        Summary <Summary  />
-                      </button>
-                    </Link>
+                    <button
+                      className="btn-style"
+                      onClick={() =>
+                        handleNavigat(
+                          item.show.id,
+                          item.show.summary,
+                          item.show.name,
+                          item.show.image.medium,
+                          item.show.language,
+                          item.show.rating.average
+                        )
+                      }
+                    >
+                      Summary
+                    </button>
                   </ul>
                 </div>
               </div>
