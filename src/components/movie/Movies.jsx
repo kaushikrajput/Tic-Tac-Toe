@@ -32,7 +32,7 @@ const Movies = () => {
             {data.map((item) => (
               <div className="col-lg-4" key={item.id}>
                 <div className="items-card">
-                  <img src={item.show.image.medium} alt="" />
+                  <img src={item.show.image.medium} alt="" className="img-fluid"/>
                   <p>{item.show.premiered}</p>
                   <ul className="list-items">
                     <li className="list-item">Name - {item.show.name}</li>

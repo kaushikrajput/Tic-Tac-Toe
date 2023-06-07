@@ -28,6 +28,7 @@ const Summary = () => {
     event.preventDefault();
     localStorage.setItem("name", name);
     localStorage.setItem("email", email);
+  
   };
   return (
     <div className="summary-section">
@@ -37,7 +38,7 @@ const Summary = () => {
             <img src={state.image} alt="" />
             <div className="summary-text">
               <h2>Movie Summary</h2>
-              <p>{state.summary.replace("<p>","")}</p>
+              <p>{state.summary.replace(/<\/?p>/g,"")}</p>
             </div>
           </div>
           <button onClick={handleShow} className="button-style">
