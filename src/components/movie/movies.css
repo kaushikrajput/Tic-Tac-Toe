@@ -1,0 +1,45 @@
+.movies {
+  text-align: center;
+  padding: 60px 0px;
+}
+.text h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+.movies-section {
+  margin-top: 80px;
+}
+.items-card {
+  display: inline-block;
+  margin-bottom: 25px;
+}
+.items-card p {
+  color: #606060;
+  font-size: 15px;
+  margin: 8px 0;
+  padding: 0;
+}
+.list-items {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+  padding: 0;
+}
+.list-item {
+  list-style: none;
+}
+
+button.btn-style {
+  margin-top: 15px;
+  color: #fff;
+  background: #333;
+  padding: 4px 25px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.5s ease;
+}
+
+button.btn-style:hover {
+  color: #fff;
+  background: #000;
+}

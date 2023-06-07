@@ -1,30 +1,17 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import Top from "./components/Top";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Blog from "./pages/Blog";
-import Components from "./pages/Components";
-import Portfolio from "./pages/Portfolio";
-import Contacts from "./pages/Contacts";
-import Pages from "./pages/Pages";
-import Home from "./components/Home";
+import Movies from "./components/movie/Movies";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Summary from "./components/summary/Summary";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
-      <Top/>
-      <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/pages" element={<Pages />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/components" element={<Components />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/" element={<Movies />} />
+          <Route path="/summary/:id" element={<Summary />} />
         </Routes>
       </BrowserRouter>
     </>
