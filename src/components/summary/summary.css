@@ -12,7 +12,7 @@
 .summary-text {
   width: 50%;
   text-align: center;
-  margin-left: 40px;
+  margin-left: 60px;
 }
 
 .summary-text h2{
@@ -20,14 +20,16 @@
   line-height: 1.1;
 }
 .summary-text p{
-  font-size: 15px;
-  font-weight: 400;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #6a6a6a;
   text-align: center;
 }
 .button-style {
   text-align: center;
   position: relative;
-  margin-top: 15px;
+  margin-top: 20px;
   color: #fff;
   background: #333;
   padding: 10px 65px;
@@ -49,4 +51,10 @@
 .form-style input{
   padding: 5px 10px;
   margin-bottom: 10px;
+}
+
+.error-style{
+  padding: 0;
+  font-size: 12px;
+  color: red;
 }

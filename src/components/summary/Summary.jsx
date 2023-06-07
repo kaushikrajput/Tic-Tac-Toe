@@ -5,13 +5,23 @@ import Modal from "react-bootstrap/Modal";
 
 const Summary = () => {
   const [show, setShow] = useState(false);
+  const [error, setError] = useState(false);
   const [data, setData] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const { state } = useLocation();
+ 
+
   const handleSubmit = (event) => {
+    if (!name) {
+      return setError(true);
+    }
+    if (!email) {
+      return setError(true);
+    }
+    setError("");
     setName("");
     setEmail("");
     setShow(false);
@@ -19,7 +29,6 @@ const Summary = () => {
     localStorage.setItem("name", name);
     localStorage.setItem("email", email);
   };
-
   return (
     <div className="summary-section">
       <div className="container">
@@ -28,7 +37,7 @@ const Summary = () => {
             <img src={state.image} alt="" />
             <div className="summary-text">
               <h2>Movie Summary</h2>
-              <p>{state.summary}</p>
+              <p>{state.summary.replace("<p>","")}</p>
             </div>
           </div>
           <button onClick={handleShow} className="button-style">
@@ -51,13 +60,23 @@ const Summary = () => {
                   onChange={(e) => setName(e.target.value)}
                   required
                 />
+                {error && name?.length <= 0 ? (
+                  <p className="error-style">Please fill out this field.</p>
+                ) : (
+                  ""
+                )}
                 <input
                   value={email}
                   type="email"
-                  placeholder="email"
+                  placeholder="Email"
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
+                {error && email?.length <= 0 ? (
+                  <p className="error-style">Please fill out this field.</p>
+                ) : (
+                  ""
+                )}
               </form>
             </div>
             <button onClick={handleSubmit} className="button-style">

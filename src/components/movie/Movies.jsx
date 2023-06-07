@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Movies = () => {
   const [data, setData] = useState([]);
   let navigate = useNavigate();
-  
+
   useEffect(() => {
     (async () => {
       let { data } = await axios.get(
@@ -43,6 +43,7 @@ const Movies = () => {
                     <li className="list-item">
                       Language - {item.show.language}
                     </li>
+
                     {item.show.rating.average ? (
                       <li className="list-item">
                         Rating - {item.show.rating.average}
@@ -66,7 +67,7 @@ const Movies = () => {
                         )
                       }
                     >
-                      Summary
+                      Details
                     </button>
                   </ul>
                 </div>
