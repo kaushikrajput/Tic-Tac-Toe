@@ -38,7 +38,7 @@ const Summary = () => {
             <img src={state.image} alt="" />
             <div className="summary-text">
               <h2>Movie Summary</h2>
-              <p>{state.summary.replace(/<\/?p>/g,"")}</p>
+              <p>{state.summary.replace(/<\/?[bp]>/g,"")}</p>
             </div>
           </div>
           <button onClick={handleShow} className="button-style">
